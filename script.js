@@ -53,6 +53,7 @@ function generatePassword() {
   }; 
 
   // Combining choices based on the user's selection
+  // All options chosen
     if (confirmLowerCase && confirmUpperCase && confirmSpecialCharacters && confirmNumbers) {
       userSelections = lowercase.concat(uppercase, specialCharacters, numbers);
       console.log(userSelections);
@@ -131,11 +132,18 @@ function generatePassword() {
       console.log(userSelections);
     }  
 
+    // If the user fails to select at least one category
+    // ! before the variables is the logical not of each variable, so in ths case it returns false
+    else if (!confirmLowerCase && !confirmUpperCase && !confirmSpecialCharacters && !confirmNumbers) {
+      userSelections = alert("You must choose at least one criterion");
+    }
+
   // Generating random password based on user's selections
-  // Variable created for the for loop 
+  // Variable created for the for loop that the random selection will be added to
     var passwordEmpty = []
 
     for (var i = 0; i < passwordLength; i++) {
+      //Using math.random to generate a random number between 0 and 1 and math floor to round down to a whole interger and having it perform that task as many times as the user specified in their character legnth selection
       var randomGeneration = userSelections[Math.floor(Math.random() * passwordLength)];
       //Using push command to add the new random elements to the end of the empty array
       passwordEmpty.push(randomGeneration); 
