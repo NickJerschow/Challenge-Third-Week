@@ -35,16 +35,24 @@ function generatePassword() {
     if (passwordLength < 8 || passwordLength > 128) {
     alert("Please choose between 8 and 128 characters");
     
-  } else {
+     // include lowercase, uppercase, numbers, special characters?
+  } else { 
     // confirm method allows for a prompt that creates a boolean value
-    confirmLowerCase = confirm("Do you want to include lower scase letters?");  
+    confirmLowerCase = confirm("Do you want to include lower case letters?");
+    console.log("Lower case " + confirmLowerCase); 
+    confirmUpperCase = confirm("Do you want to include upper scase letters?");
+    console.log("Upper case " + confirmUpperCase); 
+    confirmSpecialCharacters = confirm("Do you want to include special characters?");
+    console.log("Special characters " + confirmSpecialCharacters); 
+  
   } 
 
 
   
     
-    // include lowercase, uppercase, numbers, special characters
+
   // validate the input. 
+  
   // Genrate password based on criteria
   
   // Display password on page  
