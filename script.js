@@ -132,16 +132,20 @@ function generatePassword() {
     }  
 
   // Generating random password based on user's selections
-  // Variable created for the for loop
-    var randomPassword = " "
+  // Variable created for the for loop 
+    var passwordEmpty = []
 
     for (var i = 0; i < passwordLength; i++) {
       var randomGeneration = userSelections[Math.floor(Math.random() * passwordLength)];
+      //Using push command to add the new random elements to the end of the empty array
+      passwordEmpty.push(randomGeneration); 
       console.log(randomGeneration);
     }
     
+    //Join method allows the array to become a string
+    var password = passwordEmpty.join("")
+    console.log("The password is " + password);
     
   // Returning the password 
-  
     return password;
   }
