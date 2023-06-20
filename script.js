@@ -12,6 +12,8 @@ var passwordLength = " ";
 var confirmLowerCase;
 var confirmUpperCase;
 var confirmSpecialCharacters;
+var confirmNumbers;
+var userSelections;
 
 // Write password to the #password input
 function writePassword() {
@@ -29,9 +31,10 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   // Prompt for criteria
     // password length 8-128
-    passwordLength = (prompt("How many characters would you like your password to contain? Choose between 9 and 128"));
+    passwordLength = (prompt("How many characters would you like your password to contain? Choose between 8 and 128."));
     console.log("Password length " + passwordLength);
 
+    // If the user selects a value outside of the range
     if (passwordLength < 8 || passwordLength > 128) {
     alert("Please choose between 8 and 128 characters");
     
@@ -40,21 +43,98 @@ function generatePassword() {
     // confirm method allows for a prompt that creates a boolean value
     confirmLowerCase = confirm("Do you want to include lower case letters?");
     console.log("Lower case " + confirmLowerCase); 
-    confirmUpperCase = confirm("Do you want to include upper scase letters?");
+    confirmUpperCase = confirm("Do you want to include upper case letters?");
     console.log("Upper case " + confirmUpperCase); 
     confirmSpecialCharacters = confirm("Do you want to include special characters?");
     console.log("Special characters " + confirmSpecialCharacters); 
+    confirmNumbers = confirm("Do you want to include numbers?");
+    console.log("Numbers " + confirmNumbers);
   
-  } 
+  }; 
 
+  // Combining choices based on the user's selection
+    if (confirmLowerCase && confirmUpperCase && confirmSpecialCharacters && confirmNumbers) {
+      userSelections = lowercase.concat(uppercase, specialCharacters, numbers);
+      console.log(userSelections);
+    }
 
-  
+// When only selcting 3 inputs
+    else if (confirmLowerCase && confirmUpperCase && confirmSpecialCharacters) {
+        userSelections = lowercase.concat(uppercase, specialCharacters);
+        console.log(userSelections);
+    }
+
+    else if (confirmLowerCase && confirmUpperCase && confirmNumbers) {
+        userSelections = lowercase.concat(uppercase, numbers);
+        console.log(userSelections);
+    }
+
+    else if (confirmLowerCase && confirmSpecialCharacters && confirmNumbers) {
+      userSelections = lowercase.concat(specialCharacters, numbers);
+      console.log(userSelections);
+     }
+
+     else if (confirmUpperCase && confirmSpecialCharacters && confirmNumbers) {
+      userSelections = uppercase.concat(specialCharacters, numbers);
+      console.log(userSelections);
+    }
+
+  // When selecting 2 inputs
+     else if (confirmLowerCase && confirmUpperCase) {
+    userSelections = lowercase.concat(uppercase);
+    console.log(userSelections);
+    }
+
+    else if (confirmLowerCase && confirmSpecialCharacters) {
+    userSelections = lowercase.concat(specialCharacters);
+    console.log(userSelections);
+    }
+
+    else if (confirmLowerCase && confirmNumbers) {
+    userSelections = lowercase.concat(numbers);
+    console.log(userSelections);
+    }
+
+    else if (confirmUpperCase && confirmSpecialCharacters) {
+      userSelections = uppercase.concat(specialCharacters);
+      console.log(userSelections);
+    }
+
+    else if (confirmUpperCase && confirmNumbers) {
+      userSelections = specialCharacters.concat(numbers);
+      console.log(userSelections);
+    }
+
+    else if (confirmSpecialCharacters && confirmNumbers) {
+      userSelections = specialCharacters.concat(numbers);
+      console.log(userSelections);
+    }
+
+  // Single Selections
+   else if (confirmLowerCase) {
+    userSelections = lowercase;
+    console.log(userSelections);
+    }  
+
+    else if (confirmUpperCase) {
+      userSelections = uppercase;
+      console.log(userSelections);
+    } 
     
+    else if (confirmSpecialCharacters) {
+      userSelections = specialCharacters;
+      console.log(userSelections);
+    }  
 
-  // validate the input. 
-  
-  // Genrate password based on criteria
-  
+    else if (confirmNumbers) {
+      userSelections = numbers;
+      console.log(userSelections);
+    }  
+
+  // Genrate random password based on user's selections
+    
+    
+    
   // Display password on page  
   
     return password;
