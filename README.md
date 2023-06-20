@@ -8,7 +8,12 @@ These arrays are lowerscae characters, uppercase characters, numbers, and specia
 Once the user has selected the length and type of characters to include a password matching their criteria is generated.
 
 ## Deployed
+https://nickjerschow.github.io/Challenge-Third-Week/
 
 ## Usage
 ![Alt text](127.0.0.1_5500_index.html.png)
+
 ## Credits
+Starter code provided by the course.
+Layout and logical framework influenced by Paul Keldsen's tutorial guide.
+https://www.youtube.com/watch?v=x4HUaiazDes
