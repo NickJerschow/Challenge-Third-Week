@@ -131,11 +131,17 @@ function generatePassword() {
       console.log(userSelections);
     }  
 
-  // Genrate random password based on user's selections
+  // Generating random password based on user's selections
+  // Variable created for the for loop
+    var randomPassword = " "
+
+    for (var i = 0; i < passwordLength; i++) {
+      randomPassword = userSelections[Math.floor(Math.random() * passwordLength)];
+      console.log(randomPassword);
+    }
     
     
-    
-  // Display password on page  
+  // Returning the password 
   
     return password;
   }
