@@ -111,7 +111,7 @@ function generatePassword() {
     }
 
   // Single Selections
-   else if (confirmLowerCase) {
+    else if (confirmLowerCase) {
     userSelections = lowercase;
     console.log(userSelections);
     }  
@@ -136,8 +136,8 @@ function generatePassword() {
     var randomPassword = " "
 
     for (var i = 0; i < passwordLength; i++) {
-      randomPassword = userSelections[Math.floor(Math.random() * passwordLength)];
-      console.log(randomPassword);
+      var randomGeneration = userSelections[Math.floor(Math.random() * passwordLength)];
+      console.log(randomGeneration);
     }
     
     
